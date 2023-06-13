@@ -57,7 +57,7 @@ cd path/to/WordleSolver
 
 ```bash
 python wordlesolver.py
-
+```
 
 ## Как работает программа
 
