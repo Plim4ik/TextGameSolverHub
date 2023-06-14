@@ -6,34 +6,40 @@
 # ░╚═██╔═╝░╚██████╔╝██║░░██║██║░╚███║░░░██║░░░╚██████╔╝██║░╚═╝░██║  ██████╔╝░░░██║░░░██║░░██║╚█████╔╝██║░╚██╗
 # ░░░╚═╝░░░░╚═════╝░╚═╝░░╚═╝╚═╝░░╚══╝░░░╚═╝░░░░╚═════╝░╚═╝░░░░░╚═╝  ╚═════╝░░░░╚═╝░░░╚═╝░░╚═╝░╚════╝░╚═╝░░╚═╝
 
-from contextlib import suppress
+import configparser
 import sys
 
+# Чтение файла конфигурации
+config = configparser.ConfigParser()
+config.read('config.ini')
 
-dictpath="dict/russian_nouns_five.txt"
-if(len(sys.argv)>1):
-	dictpath=sys.argv[1]
-allwords=open(dictpath,"r").read().split('\n')
+# Извлечение настроек из файла конфигурации
+dictpath = config.get('Settings', 'DictionaryPath')
+validchars = config.get('Settings', 'ValidCharacters')
+wordlength = config.getint('Settings', 'WordLength')
+wordstoremove = config.get('Settings', 'WordsToRemove').split(',')
 
-validwords=set()
+# Проверка аргументов командной строки
+if len(sys.argv) > 1:  
+    dictpath = sys.argv[1]
 
-letters='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZйцукенгшщзхъфывапролджэячсмитьбюЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ'
+# Чтение и обработка словаря
+allwords = open(dictpath, "r").read().split('\n')
+validwords = set()
 
 for w in allwords:
-	if("'" in w):continue
-	if(len(w)!=5):continue
-	for i in range(6):
-		if(i<5 and w[i] not in letters):break
-		elif(i==5):validwords.add(w.lower())
+    if ("'" in w): continue
+    if (len(w) != wordlength): continue
+    for i in range(wordlength + 1):
+        if (i < wordlength and w[i] not in validchars): break
+        elif (i == wordlength): validwords.add(w.lower())
 
-try:
-	validwords.remove('clint') # Игра такое слово не принимает
-	validwords.remove('garbo') # Игра такое слово не принимает
-	validwords.remove('galen') # Игра такое слово не принимает
-	validwords.remove('abner') # Игра такое слово не принимает
-except:pass
+# Удаление определенных слов
+for word in wordstoremove:
+    validwords.discard(word)
 
-validwords=list(validwords)
+# Преобразование в список
+validwords = list(validwords)
 
 def isThisSecretAvailable(testword,mask,secret):
 	'''
