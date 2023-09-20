@@ -23,7 +23,7 @@ git clone https://github.com/Plim4ik/WordleSolver.git
 
 ```bash
 cd WordleSolver
-pip install -r requirements.txt
+pip install -r requirements.pip
 ```
 
 ## Настройка
