@@ -5,10 +5,14 @@
 # ░╚═██╔═╝░╚██████╔╝██║░░██║██║░╚███║░░░██║░░░╚██████╔╝██║░╚═╝░██║  ██████╔╝░░░██║░░░██║░░██║╚█████╔╝██║░╚██╗
 # ░░░╚═╝░░░░╚═════╝░╚═╝░░╚═╝╚═╝░░╚══╝░░░╚═╝░░░░╚═════╝░╚═╝░░░░░╚═╝  ╚═════╝░░░░╚═╝░░░╚═╝░░╚═╝░╚════╝░╚═╝░░╚═╝
 
-with open("../dict/russian_nouns.txt", "r") as f:
+# Открываем файл с существительными на русском языке
+with open("./dict/russian/russian_nouns.txt", "r") as f:
     nouns = f.readlines()
 
-five_letter_nouns = filter(lambda x: len(x.strip()) == 5, nouns)
-
-with open("../dict/russian_nouns_five.txt", "w") as f:
-    f.writelines(five_letter_nouns)
+# Создаем файлы для слов с разной длиной (4-11 букв)
+for length in range(4, 12):
+    filtered_nouns = filter(lambda x: len(x.strip()) == length, nouns)
+    output_file_path = f"./dict/russian/russian_nouns_{length}.txt"
+    
+    with open(output_file_path, "w") as f:
+        f.writelines(filtered_nouns)
