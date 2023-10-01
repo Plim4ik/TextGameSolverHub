@@ -5,22 +5,9 @@
 # ░╚═██╔═╝░╚██████╔╝██║░░██║██║░╚███║░░░██║░░░╚██████╔╝██║░╚═╝░██║  ██████╔╝░░░██║░░░██║░░██║╚█████╔╝██║░╚██╗
 # ░░░╚═╝░░░░╚═════╝░╚═╝░░╚═╝╚═╝░░╚══╝░░░╚═╝░░░░╚═════╝░╚═╝░░░░░╚═╝  ╚═════╝░░░░╚═╝░░░╚═╝░░╚═╝░╚════╝░╚═╝░░╚═╝
 
-# Список файлов для сортировки
-file_paths = [
-    './dict/russian/russian_nouns_4.txt',
-    './dict/russian/russian_nouns_5.txt',
-    './dict/russian/russian_nouns_6.txt',
-    './dict/russian/russian_nouns_7.txt',
-    './dict/russian/russian_nouns_8.txt',
-    './dict/russian/russian_nouns_9.txt',
-    './dict/russian/russian_nouns_10.txt',
-    './dict/russian/russian_nouns_11.txt'
-]
+with open('../dict/russian_nouns_five.txt', 'r') as f:
+    lines = f.readlines()
+    lines.sort()
 
-for file_path in file_paths:
-    with open(file_path, 'r') as f:
-        lines = f.readlines()
-        lines.sort()
-
-    with open(file_path, 'w') as f:
-        f.writelines(lines)
+with open('../dict/russian_nouns_five.txt', 'w') as f:
+    f.writelines(lines)
