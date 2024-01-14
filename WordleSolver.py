@@ -8,6 +8,7 @@
 
 import configparser
 import sys
+import pprint
 
 # Чтение файла конфигурации
 config = configparser.ConfigParser()
