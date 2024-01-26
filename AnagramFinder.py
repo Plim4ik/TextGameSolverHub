@@ -2,7 +2,8 @@ from collections import Counter
 import sys
 import time
 
-# Use: python AnagramFinder.py [letters without space, example: битдеа]
+# Use: python AnagramFinder.py [letters without space]
+# Example: python3 AnagramFinder.py битдеа
 
 with open('dict/russian_nouns.txt', 'r') as f:
     dictionary = f.read()
