@@ -9,11 +9,19 @@
 from collections import Counter
 import sys
 import time
+import configparser
+
+config = configparser.ConfigParser()
+config.read('config.ini')
+
+# Извлечение настроек из файла конфигурации
+dictpath = config.get('Settings', 'DictionaryPath')
+
 
 # Use: python AnagramFinder.py [letters without space]
 # Example: python3 AnagramFinder.py битдеа
 
-with open('dict/russian_nouns.txt', 'r') as f:
+with open(dictpath, 'r') as f:
     dictionary = f.read()
 
 dictionary = [x.lower() for x in dictionary.split('\n')]
