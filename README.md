@@ -14,6 +14,43 @@ The repository currently provides solutions for the following games:
 
 Feel free to explore the scripts and enhance the repository with additional solutions for other text-based games!
 
+## Usage Instructions:
+
+### AnagramFinder (WoW)
+
+Use the following command to run AnagramFinder for Words of Wonders:
+
+```bash
+python AnagramFinder.py [letters without space]
+```
+
+Example:
+
+```bash
+python3 AnagramFinder.py битдеа
+```
+
+### WorldeSolver (Wordle)
+
+Use the following command to run WorldeSolver for Wordle:
+
+```bash
+python WorldeSolver.py
+```
+
+Example:
+
+```bash
+# Analyze dictionary (12970 words)...
+tares
+Enter one of the next words: ['tares'] (212 different masks)
+What word did you type: tares
+What mask did you get: nyngy
+# Here, 'n' represents the absence of the letter in the word (None),
+# 'g' represents the correct letter in the correct position (Green),
+# 'y' represents the correct letter in the wrong position (Yellow).
+```
+
 ## Available Languages (9)
 | Language Name   | Native Language Name   |   Number of Words | Word File           |
 |-----------------|------------------------|-------------------|---------------------|
