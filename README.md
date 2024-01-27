@@ -11,6 +11,21 @@ WordleSolver - это программа, предназначенная для 
 - [Как пользоваться](#как-пользоваться)
 - [Как работает программа](#как-работает-программа)
 
+
+
+## Available Languages (9)
+| Language Name   | Native Language Name   |   Number of Words | Word File           |
+|-----------------|------------------------|-------------------|---------------------|
+| Swedish         | Svenska                |            403791 | dict/Swedish.txt    |
+| Turkish         | Türkçe                 |             60450 | dict/Turkish.txt    |
+| Russian         | Русский язык           |             51304 | dict/Russian.txt    |
+| French          | Français               |            336528 | dict/French.txt     |
+| English         | English                |             12973 | dict/English.txt    |
+| Spanish         | Español                |            559801 | dict/Spanish.txt    |
+| Italian         | Italiano               |           1707903 | dict/Italian.txt    |
+| Portuguese      | Português              |           1108873 | dict/Portuguese.txt |
+| Polish          | Polski                 |           4075605 | dict/Polish.txt     |
+
 ## Установка
 
 1. Клонируйте этот репозиторий на свой компьютер с помощью команды:
