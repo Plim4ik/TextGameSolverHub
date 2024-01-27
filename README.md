@@ -46,14 +46,14 @@ pip install -r requirements.txt
 
 ### Worlde
 
-- **DictionaryPath**: Path to the dictionary file for Wordle. Example: `dict/russian_nouns.txt`
-- **ValidCharacters**: Valid characters that can be used in words for Wordle. Example: `abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZйцукенгшщзхъфывапролджэячсмитьбюЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ`
+- **DictionaryPath**: Path to the dictionary file for Wordle. Example: `dict/Russian.txt`
+- **ValidCharacters**: Valid characters that can be used in words for Wordle. Example: `abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ`
 - **WordLength**: The length of words to solve in Wordle. Example: `5`
-- **WordsToRemove**: Words to remove from the dictionary for Wordle. Example: `clint,garbo,galen,abner`
+- **WordsToRemove**: Words to remove from the dictionary for Wordle. Example: `clint,abner`
 
 ### AnagramFinder
 
-- **DictionaryPath**: Path to the dictionary file for AnagramFinder. Example: `dict/russian_nouns.txt`
+- **DictionaryPath**: Path to the dictionary file for AnagramFinder. Example: `dict/Russian.txt`
 - **MinLength**: The minimum length of words to consider in AnagramFinder. Example: `3`
 
 ## Adding New Words
