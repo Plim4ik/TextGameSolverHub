@@ -13,10 +13,10 @@ config = configparser.ConfigParser()
 config.read('config.ini')
 
 # Извлечение настроек из файла конфигурации
-dictpath = config.get('Settings', 'DictionaryPath')
-validchars = config.get('Settings', 'ValidCharacters')
-wordlength = config.getint('Settings', 'WordLength')
-wordstoremove = config.get('Settings', 'WordsToRemove').split(',')
+dictpath = config.get('Worlde', 'DictionaryPath')
+validchars = config.get('Worlde', 'ValidCharacters')
+wordlength = config.getint('Worlde', 'WordLength')
+wordstoremove = config.get('Worlde', 'WordsToRemove').split(',')
 
 # Проверка аргументов командной строки
 if len(sys.argv) > 1:  

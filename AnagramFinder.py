@@ -15,7 +15,8 @@ config = configparser.ConfigParser()
 config.read('config.ini')
 
 # Извлечение настроек из файла конфигурации
-dictpath = config.get('Settings', 'DictionaryPath')
+dictpath = config.get('AnagramFinder', 'DictionaryPath')
+minlength = config.get('AnagramFinder', 'MinLength')
 
 
 # Use: python AnagramFinder.py [letters without space]
@@ -28,7 +29,7 @@ dictionary = [x.lower() for x in dictionary.split('\n')]
 
 
 def return_anagrams(letters: str) -> list:
-    global dictionary
+    global dictionary, minlength
 
     assert isinstance(letters, str), 'Scrambled letters should only be of type string.'
 
@@ -47,8 +48,8 @@ def return_anagrams(letters: str) -> list:
                 if v <= letters_count[k]:
                     check_word.add(k)
             # Check if check_words is exactly equal to the unique letters
-            # in the word of the dictionary
-            if check_word == set(word):
+            # in the word of the dictionary and the length is greater than or equal to minlength
+            if check_word == set(word) and len(word) >= int(minlength):
                 anagrams.add(word)
 
     # Check if the empty string is in the set before attempting to remove it
@@ -56,6 +57,7 @@ def return_anagrams(letters: str) -> list:
         anagrams.remove('')
 
     return sorted(list(anagrams), key=lambda x: len(x))
+
 
 
 
