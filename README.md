@@ -1,10 +1,10 @@
-# TextGameSolverHub
+# 🎮 TextGameSolverHub
 
-## Repository Description:
+## 📂 Repository Description:
 
 TextGameSolverHub is a collection of Python scripts designed to solve various text-based games. These scripts utilize algorithms and strategies to decipher and solve word-related challenges in games like Wordle, Words of Wonders (WoW), and similar text-based puzzles.
 
-## Supported Games:
+## 🎮 Supported Games:
 
 The repository currently provides solutions for the following games:
 
@@ -14,7 +14,7 @@ The repository currently provides solutions for the following games:
 
 Feel free to explore the scripts and enhance the repository with additional solutions for other text-based games!
 
-## Usage Instructions:
+## 🚀 Usage Instructions:
 
 ### AnagramFinder (WoW)
 
@@ -51,7 +51,7 @@ What mask did you get: nyngy
 # 'y' represents the correct letter in the wrong position (Yellow).
 ```
 
-## Available Languages (9)
+## 🌍 Available Languages (9)
 | Language Name   | Native Language Name   |   Number of Words | Word File           |
 |-----------------|------------------------|-------------------|---------------------|
 | Swedish         | Svenska                |            403791 | dict/Swedish.txt    |
@@ -64,7 +64,7 @@ What mask did you get: nyngy
 | Portuguese      | Português              |           1108873 | dict/Portuguese.txt |
 | Polish          | Polski                 |           4075605 | dict/Polish.txt     |
 
-## Installation
+## 🛠️ Installation
 
 1. Clone this repository to your computer using the following command:
 
@@ -79,7 +79,7 @@ cd TextGameSolverHub
 pip install -r requirements.txt
 ```
 
-## Configuration
+## ⚙️ Configuration
 
 ### Worlde
 
@@ -93,6 +93,6 @@ pip install -r requirements.txt
 - **DictionaryPath**: Path to the dictionary file for AnagramFinder. Example: `dict/Russian.txt`
 - **MinLength**: The minimum length of words to consider in AnagramFinder. Example: `3`
 
-## Adding New Words
+## ➕ Adding New Words
 
 To add new words to the dictionary, open the dictionary file in a text editor and add each new word on a new line. Remember that all words should be written in lowercase and should not contain spaces or special characters.
