@@ -1,17 +1,18 @@
-# WordleSolver
+# TextGameSolverHub
 
-WordleSolver - это программа, предназначенная для решения популярной игры "Вордли". Она использует словарь слов и "маски" для определения правильного ответа. В этом руководстве вы найдете все необходимое для установки, настройки, добавления новых слов и использования программы.
+## Repository Description:
 
-## Содержание
+TextGameSolverHub is a collection of Python scripts designed to solve various text-based games. These scripts utilize algorithms and strategies to decipher and solve word-related challenges in games like Wordle, Words of Wonders (WoW), and similar text-based puzzles.
 
-- [Установка](#установка)
-- [Настройка](#настройка)
-- [Добавление новых слов](#добавление-новых-слов)
-- [О масках](#о-масках)
-- [Как пользоваться](#как-пользоваться)
-- [Как работает программа](#как-работает-программа)
+## Supported Games:
 
+The repository currently provides solutions for the following games:
 
+1. **Wordle:** A popular word puzzle game where players attempt to guess a secret word within a limited number of attempts.
+
+2. **Words of Wonders (WoW):** A game that combines word search and crossword puzzle elements, challenging players to find hidden words based on provided clues.
+
+Feel free to explore the scripts and enhance the repository with additional solutions for other text-based games!
 
 ## Available Languages (9)
 | Language Name   | Native Language Name   |   Number of Words | Word File           |
@@ -26,68 +27,35 @@ WordleSolver - это программа, предназначенная для 
 | Portuguese      | Português              |           1108873 | dict/Portuguese.txt |
 | Polish          | Polski                 |           4075605 | dict/Polish.txt     |
 
-## Установка
+## Installation
 
-1. Клонируйте этот репозиторий на свой компьютер с помощью команды:
-
-```bash
-git clone https://github.com/Plim4ik/WordleSolver.git
-```
-
-2. Установите все необходимые зависимости:
+1. Clone this repository to your computer using the following command:
 
 ```bash
-cd WordleSolver
-pip install -r requirements.pip
+git clone https://github.com/Plim4ik/TextGameSolverHub.git
 ```
 
-## Настройка
-
-- `WordLength`: Укажите длину слова, которую вы хотите решить, в соответствующем поле в файле `config.ini`.
-- `DictionaryPath`: Укажите путь к вашему словарю в соответствующем поле в файле `config.ini`. Если вы хотите использовать стандартный словарь, оставьте это поле как есть.
-- `ValidCharacters`: Перечислите допустимые символы, которые могут использоваться в словах, в соответствующем поле в файле `config.ini`.
-- `WordsToRemove`: Укажите слова, которые вы хотите удалить из словаря, в соответствующем поле в файле `config.ini`.
-
-Для настройки откройте файл `config.ini` в текстовом редакторе и измените соответствующие поля в секции `[Settings]`. После внесения изменений сохраните и закройте файл. Запустите скрипт снова, и он будет использовать обновленные настройки.
-
-## Добавление новых слов
-
-Чтобы добавить новые слова в словарь, откройте файл словаря в текстовом редакторе и добавьте каждое новое слово на новую строку. Помните, что все слова должны быть написаны строчными буквами и не должны содержать пробелов или специальных символов.
-
-## О масках
-
-"Маски" - это специальные символы, используемые программой для определения возможных вариантов слов. 
-
-- Зелёная маска (`G`) указывает на буквы, которые находятся на правильном месте.(G - GREEN, зеленый)
-- Жёлтая маска (`Y`) указывает на буквы, которые есть в слове, но находятся не на своем месте.(Y - YELLOW, желтый)
-- Серая маска (`N`) указывает на буквы, которых нет в слове. (N - NONE, нет)
-
-## Как пользоваться
-
-Чтобы использовать программу, выполните следующие шаги:
-
-1. Откройте терминал и перейдите в директорию программы.
+2. Install all necessary dependencies:
 
 ```bash
-cd path/to/WordleSolver
+cd TextGameSolverHub
+pip install -r requirements.txt
 ```
 
-2. Запустите программу с помощью команды:
+## Configuration
 
-```bash
-python wordlesolver.py
-```
+### Worlde
 
-## Как работает программа
+- **DictionaryPath**: Path to the dictionary file for Wordle. Example: `dict/russian_nouns.txt`
+- **ValidCharacters**: Valid characters that can be used in words for Wordle. Example: `abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZйцукенгшщзхъфывапролджэячсмитьбюЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ`
+- **WordLength**: The length of words to solve in Wordle. Example: `5`
+- **WordsToRemove**: Words to remove from the dictionary for Wordle. Example: `clint,garbo,galen,abner`
 
-WordleSolver работает на принципе перебора всех возможных слов из словаря, сравнивая их с текущими подсказками и масками, предоставленными игрой. Вот базовый алгоритм работы программы:
+### AnagramFinder
 
-1. Сначала программа считывает все слова из словаря, которые соответствуют заданной длине слова.
-2. Затем, для каждого слова, она применяет текущие маски и проверяет, соответствует ли слово этим маскам.
-3. Если слово соответствует маскам, оно сохраняется в список потенциальных ответов.
-4. Этот процесс повторяется для каждой новой подсказки и маски, предоставленной игрой, пока не будет найдено одно слово, которое соответствует всем маскам и подсказкам.
-5. Найденное слово - это ответ, который программа возвращает.
+- **DictionaryPath**: Path to the dictionary file for AnagramFinder. Example: `dict/russian_nouns.txt`
+- **MinLength**: The minimum length of words to consider in AnagramFinder. Example: `3`
 
-Программа может работать как в автоматическом режиме, так и в ручном. 
+## Adding New Words
 
-Надеемся, что это руководство поможет вам использовать WordleSolver максимально эффективно. Удачи в игре!
+To add new words to the dictionary, open the dictionary file in a text editor and add each new word on a new line. Remember that all words should be written in lowercase and should not contain spaces or special characters.
