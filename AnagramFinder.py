@@ -57,4 +57,4 @@ if __name__ == '__main__':
     print(test_anagrams)
     stop = time.time()
     print(f"Number of anagrams: {len(test_anagrams)}")
-    print(f"Time Taken: {round(stop - start, 2)} seconds")
+    print(f"Time Taken: {round(stop - start, 5)} seconds")
